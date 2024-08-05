@@ -1,0 +1,47 @@
+{
+  "name": "ui",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "storybook dev",
+    "test": "echo \"${npm_lifecycle_event}: nothing here\"; exit 1",
+    "lint": "prettier --check . && eslint .",
+    "format": "prettier --write .",
+    "build": "storybook build"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@config/storybook": "file:packages/storybook",
+    "@eslint/js": "^9.8.0",
+    "@ngneat/falso": "^7.2.0",
+    "eslint": "^9.8.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-svelte": "^2.43.0",
+    "prettier": "^3.3.3",
+    "prettier-plugin-svelte": "^3.2.6",
+    "storybook": "^8.2.7"
+  },
+  "prettier": {
+    "bracketSameLine": false,
+    "bracketSpacing": true,
+    "semi": false,
+    "singleAttributePerLine": true,
+    "singleQuote": true,
+    "svelteSortOrder": "scripts-styles-options-markup",
+    "trailingComma": "all",
+    "useTabs": false,
+    "plugins": [
+      "prettier-plugin-svelte"
+    ],
+    "overrides": [
+      {
+        "files": "*.svelte",
+        "options": {
+          "parser": "svelte"
+        }
+      }
+    ]
+  }
+}
